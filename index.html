@@ -13,27 +13,66 @@
     <header>
         <section>
             <h1>Weather Dashboard</h1>
+            <h2 id="current-date"></h2>
         </section>
     </header>
 
-    <main>
-        <section id="city-search">
+    <main class = "row">
+        <section id="city-search"  class = "col-md-3">
             <h2>Search for a City:</h2>
-            <section #input>
+            
                 <input id="inputValue" type="text" placeholder="Enter a city">
                 <input id="button" type="submit" value="Submit">
-            </section>
-            <section id="display">
-                
-                    <p id="city"></p>
-                    <p id="date"></p>
-                    <p id="weather"></p>
-                    <p id="temp"></p>
-                    <p id="humidity"></p>
-                    <p id="windspeed"></p>
-                    <p id="uv-index"></p>
-                   
-            </section>
+        </section> 
+        <section class ="col-md-9" id="display">
+            <div class="row" >
+                <p id="city"></p>
+                <p id="date"></p>
+                <p id="weather"></p>
+                <p id="temp"></p>
+                <p id="humidity"></p>
+                <p id="windspeed"></p>
+                <p id="uv-index"></p>
+            </div> 
+            <div class="row" id="forecast">
+                <div class = "col-md-2">
+                    <p id="date-1"></p>
+                    <p id="weather-1"></p>
+                    <p id="temp-1"></p>
+                    <p id="humidity-1"></p>
+                    <p id="windspeed-1"></p>
+                </div>
+                <div class = "col-md-2">
+                    <p id="date-2"></p>
+                    <p id="weather-2"></p>
+                    <p id="temp-2"></p>
+                    <p id="humidity-2"></p>
+                    <p id="windspeed-2"></p>
+                </div>
+                <div class = "col-md-2">
+                    <p id="date-3"></p>
+                    <p id="weather-3"></p>
+                    <p id="temp-3"></p>
+                    <p id="humidity-3"></p>
+                    <p id="windspeed-3"></p>
+                </div>
+                <div class = "col-md-2">
+                    <p id="date-4"></p>
+                    <p id="weather-4"></p>
+                    <p id="temp-4"></p>
+                    <p id="humidity-4"></p>
+                    <p id="windspeed-4"></p>
+                </div>
+                <div class = "col-md-2">
+                    <p id="date-5"></p>
+                    <p id="weather-5"></p>
+                    <p id="temp-5"></p>
+                    <p id="humidity-5"></p>
+                    <p id="windspeed-5"></p>
+                </div>
+
+            </div>
+        </section>
             
         </section>
     </main>
