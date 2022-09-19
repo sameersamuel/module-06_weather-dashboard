@@ -22,7 +22,6 @@
 var geoCodingUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='
 var sixteen_url = 'api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&cnt=7&appid={API key}';
 var myApiKey = '73713d092fbc2614296bf3acc8509c6a';
-// var oneCall30 = 'https://api.openweathermap.org/data/3.0/onecall?lat='; 
 var forcastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=';
 var searchBtn = document.querySelector('#button');
 var inputValueEl = document.querySelector('#inputValue');
@@ -30,10 +29,12 @@ var nameEl = document.querySelector('#name');
 var dateEl = document.querySelector('#date');
 var tempEl = document.querySelector('#temp');
 var cityEl = document.querySelector('#city');
+var stateEl = document.querySelector('#state');
 var windspeedEl = document.querySelector('#windspeed');
 var humidityEl = document.querySelector('#humidity');
-
 var lat,lon;
+
+
 
 
 function fetchForecast () {
@@ -56,23 +57,23 @@ function getCoordinates (city) {
         console.log(lat);
         lon = data[0].lon;
         console.log(lon);
+        // stateEl.innerText = "State: " + data.; <-- see line 92
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myApiKey}`)
         .then(response => response.json())
         .then(data => {
-          
           console.log(data)
           displayCurrentWeather(city, data)
           fetchForecast ();
-         
-
         })
-
         .catch(err => console.log(err))
         });
+      };
         
-      }
-//       .catch(err => console.log(err))
-// };
+
+          
+         
+
+
 
 function displayCurrentWeather (city, data) {
 
@@ -88,8 +89,9 @@ function displayCurrentWeather (city, data) {
   windSpeed = data.wind.speed;
   windspeedEl.innerText = "Wind: " + windSpeed + "mph";
   cityEl.innerText = "City: " + data.name;
- 
+  // stateEl.innerText = "State: " + data.main[0].state; <--- find path to State
   dateEl.innerText = new Date(data.dt*1000);
+ 
 }
 
 function displayForecast (city, data) {

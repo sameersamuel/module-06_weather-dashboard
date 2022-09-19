@@ -2,7 +2,14 @@
     margin: 0;
 }
 
+header {
+    color:  #014f9d;
+}
+#button{
+    border-radius: 20px;
+}
 main {
 
     background-color: #014f9d;
+    color: #ffffff;
 }
